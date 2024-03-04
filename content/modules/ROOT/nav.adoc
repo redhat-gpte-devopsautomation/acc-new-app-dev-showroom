@@ -1,7 +1,6 @@
-* xref:pages/module-01.adoc[1. RPM Native Container]
-** xref:pages/module-01.adoc#installing-repositories[Repositories]
-** xref:pages/module-01.adoc#software[Software]
+* xref:intro.adoc[Introduction]
+* xref:m1.adoc[Module 1. Enabling Immediate Productivity]
+* xref:m2.adoc[Module 2. Automating Guardrails for Consistent Security and Operation Control]
+* xref:m3.adoc[Module 3. Building a Flexible Architecture]
+* xref:finish.adoc[Finish]
 
-* xref:pages/module-02.adoc[2. GitHub Sourced Container]
-** xref:pages/module-02.adoc#prerequisites[Install Prerequisites]
-** xref:pages/module-02.adoc#container[Enable Container]
