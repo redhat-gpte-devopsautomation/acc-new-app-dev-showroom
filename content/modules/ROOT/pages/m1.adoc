@@ -103,8 +103,8 @@ image::1-2-5-Browser-Preview.png[BrowserPreview,,]
 image::1-2-7-VillainResource.png[VillainResource,,]
 
 [start=8]
-. Down in line 253, replace the implementation of the hello() endpoint to:
- return "Hello Summit 2023!";
+. Down in line 257, replace the implementation of the hello() endpoint to:
+ return "Hello Summit 2024!";
 
 image::1-2-8-HelloSummit.png[HelloWorld,,]
 
