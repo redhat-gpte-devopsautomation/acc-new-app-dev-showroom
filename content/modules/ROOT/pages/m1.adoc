@@ -24,7 +24,7 @@ Being flexible in what programming language to use allows the developer to use t
 image::1-1-3-DeveloperPerspective.png[Dev,,]
 
 [start=3]
-.. Select #Topology# in the left hand menu and choose quarkus-superheroes-%USERID%
+.. Select #Topology# in the left hand menu and choose quarkus-superheroes-`{user}`
 
 image::1-1-1-QuarkusTopology.png[Topology,,]
 
@@ -34,7 +34,7 @@ image::1-1-1-QuarkusTopology.png[Topology,,]
 image::1-1-1-AppUI-URL.png[AppUI,,]
 
 [start=5]
-.. Alternatively, http://ui-super-heroes-quarkus-superheroes-%USERID%.%SUBDOMAIN%[click here,window=_blank] for direct access.
+.. Alternatively, http://ui-super-heroes-quarkus-superheroes-`{user}`.`{openshift_cluster_ingress_domain}`[click here,window=_blank] for direct access.
 
 [start=2]
 . Run your first Fight
@@ -68,7 +68,7 @@ Improve and expedite the inner loop development process with live coding where c
 .*Let’s run a quick example of how live coding makes the development process faster and more pleasant.*
 
 [start=1]
-. To begin, https://codeserver-codeserver-%USERID%.%SUBDOMAIN%[navigate to your code server,window=_blank], the password is `{password}`
+. To begin, https://codeserver-codeserver-`{user}`.`{openshift_cluster_ingress_domain}`[navigate to your code server,window=_blank], the password is `{password}`
 
 [start=2]
 . Open a new terminal by going to [Terminal] → [New Terminal] on the menu bar present either on the top left menu or at the top of the window.
@@ -90,7 +90,7 @@ image::1-2-2-Terminal.png[Terminal,,]
 image::1-2-3-Quarkus-Dev.png[QDev,,]
 
 [start=5]
-. Once this completes, https://codeserver-codeserver-%USERID%.%SUBDOMAIN%/proxy/8084/api/villains/hello[access  your hello endpoint here,window=_blank].
+. Once this completes, https://codeserver-codeserver-`{user}`.`{openshift_cluster_ingress_domain}`/proxy/8084/api/villains/hello[access  your hello endpoint here,window=_blank].
 
 > **Note**: Take note of the response “Hello Villain Resource”
 
