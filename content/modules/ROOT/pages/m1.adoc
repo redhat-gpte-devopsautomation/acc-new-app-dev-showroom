@@ -16,7 +16,7 @@ Being flexible in what programming language to use allows the developer to use t
 
 .*Run the application for the first time:*
 . Navigate to the Application UI
-.. Log in to your OpenShift Console with username *%USERID%* and password *%PASSWORD%*.
+.. Log in to your OpenShift Console with username `{user}` and password `{password}`.
 .. Ensure you select #Developer# from the dropdown.
 
 > **Note**: For the purpose of this lab, with multiple users accessing the same environment simultaneously, admin access is limited. When you deploy this solution on your own, you will likely have access to more Administrative rights than provided in this lab.
@@ -68,7 +68,7 @@ Improve and expedite the inner loop development process with live coding where c
 .*Let’s run a quick example of how live coding makes the development process faster and more pleasant.*
 
 [start=1]
-. To begin, https://codeserver-codeserver-%USERID%.%SUBDOMAIN%[navigate to your code server,window=_blank], the password is *%PASSWORD%*.
+. To begin, https://codeserver-codeserver-%USERID%.%SUBDOMAIN%[navigate to your code server,window=_blank], the password is `{password}`
 
 [start=2]
 . Open a new terminal by going to [Terminal] → [New Terminal] on the menu bar present either on the top left menu or at the top of the window.
@@ -170,7 +170,7 @@ Developers can focus on code without having to touch containers, leaving all the
 Finally, we have the ability to self-provision services. This allows greater efficiency by enabling your developers to focus on the code rather than the logistics. Developers are now able to take full control over their infrastructure and application configuration, while being shielded from the underlying complexities of the cloud providers and services. As an example, if I need another database, I can simply provision another database using a template or operator. There is even a UI guiding you through the process, and the provisioning and configuration can be exported as code that can be reused later for DevOps.
 
 . Go to the OpenShift Console and make sure you're still in the Developer perspective.
-. In the newly added development project *dev-%USERID%*, Click +Add on the left menu
+. In the newly added development project *dev-`{user}`*, Click +Add on the left menu
 .. Select Database in the Developer Catalog
 
 image::1-4-2a-AddDatabase.png[AddDB,,]

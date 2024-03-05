@@ -34,7 +34,7 @@ image::2-1-2-ChangeOutput.png[HelloUser,,]
 
 [start=3]
 . If you don’t already have one active, open a new terminal by going to [Terminal] → [New Terminal] on the top menu bar.
-. Return to the *quarkus-superheroes-%USERID%* project, and make sure you’re in the  rest-fights directory
+. Return to the *quarkus-superheroes-`{user}`* project, and make sure you’re in the  rest-fights directory
 
  ]$ oc project quarkus-superheroes-%USERID%
  ]$ cd /home/codeserver/quarkus-super-heroes/rest-fights
@@ -51,7 +51,7 @@ image::2-1-2-ChangeOutput.png[HelloUser,,]
 image::2-1-4-GitPush.png[GitPush,,]
 
 [start=6]
-. This will trigger the pipeline to start. Return back to the OpenShift console and switch to the Project *tekton-%USERID%*. Then navigate to [Pipelines] → [quarkus-pipeline] to see the pipeline starts the build process
+. This will trigger the pipeline to start. Return back to the OpenShift console and switch to the Project *tekton-`{user}`*. Then navigate to [Pipelines] → [quarkus-pipeline] to see the pipeline starts the build process
 
 image::2-1-6a-TektonPipelines.png[Pipeline,,]
 
@@ -112,7 +112,7 @@ As we start to manage more complex environments that may span across multiple cl
 
 
 . Go to GitOps console [ArgoCD], review all of the monitored resources, and map it back to the Topology in the OpenShift console:
-.. Navigate to the Project *argocd-%USERID%* and flip to the Topology view. Select the OpenURL link in the top right-hand corner of the argocd-server icon.
+.. Navigate to the Project *argocd-`{user}`* and flip to the Topology view. Select the OpenURL link in the top right-hand corner of the argocd-server icon.
 
 image::2-3-1a-ArgoCDServer.png[ArgoCD,,]
 
@@ -136,7 +136,7 @@ image::2-3-1c-Resources.png[ArgoCDResources,,]
 .. Gitea is available https://gitea.%SUBDOMAIN%[in this link,window=_blank].
 .. Once on the Gitea homepage, click Sign In on the top right.
 .. Credentials are the same as you’ve been using (%USERID% / %PASSWORD%).
-.. Click the link to the repository  *%USERID%/quarkus-super-heroes-deploy*.
+.. Click the link to the repository  *`{user}`/quarkus-super-heroes-deploy*.
 
 image::2-3-2d-GiteaRepo.png[GiteaRepo,,]
 
@@ -151,7 +151,7 @@ image::2-3-2e-GiteaKustomize.png[Kustomize,,]
 image::2-3-2f-GiteaDeployment.png[GiteaDeployment,,]
 
 [start=3]
-. Back In the OpenShift Console, under Developer perspective, go to the Topology, within the Project *quarkus-superheroes-%USERID%*.
+. Back In the OpenShift Console, under Developer perspective, go to the Topology, within the Project *quarkus-superheroes-`{user}`*.
 . Locate the rest-fights service.
 . Click the icon and the right panel will appear - select the Details tab.
 . Increase the number of running Pod to 3 by clicking ^ next to the pod count chart
