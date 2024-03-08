@@ -12,12 +12,14 @@ In this lab we'll address some ways that can help you with some major challenges
 We will be using Red Hat OpenShift as the development platform, as well as Gitea as the code repository and finally Red Hat OpenShift Dev Spaces as development environment.
 
 [%hardbreaks]
-ssh user:`{ssh_user}`
-ssh password: `{ssh_password}`
+ssh user: `{ssh_user}`
+ssh password: `{ssh_user}`
 ssh command: ssh devops@bastion.`{guid}`.example.opentlc.com
-OpenShift console URL: `{console_url}`
+OpenShift console URL: 
+`{console_url}`
 gitea console URL: `{gitea_console_url}`
 gitea_user: `{gitea_user}`
 gitea password: `{gitea_password}`
-OpenShift login command: `{login_command}`
+OpenShift login command: 
+`{login_command}`
 OpenShift cluster ingress domain: `{openshift_cluster_ingress_domain}`
