@@ -25,3 +25,4 @@ asciidoc:
     openshift_console_url: https://console-openshift-console.apps.cluster-c75tv.sandbox906.opentlc.com
     password: openshift
     user: user6
+    devspaces_url: https://user6-quarkus-quickstart-code-redirect-3.apps.cluster-ghrn8.sandbox544.opentlc.com
