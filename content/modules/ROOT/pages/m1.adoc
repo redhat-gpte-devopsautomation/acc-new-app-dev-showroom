@@ -82,11 +82,11 @@ image::dev-spaces-operator.png[DevSpacesOperator,,]
 image::che-cluster.png[CheCluster,,]
 
 [start=3]
-. When the cluster is created we will see the link to Red Hat OpenShift Dev Spaces on the list of Red Hat Applications on the top right corner of the OpenShift Console.
+. A few minutes after the cluster is created we will see the link to Red Hat OpenShift Dev Spaces on the list of Red Hat Applications on the top right corner of the OpenShift Console. Log off the `admin` user and log on again as `{user}`.
 
 image::applications.png[Applications,,]
 
-Click on it and it will take us to the Red Hat OpenShift Dev Spaces dashboard, where we will create a Quarkus workspace, but first we need to authorize the operator to access our user account by clicking on `Allow selected permissions`.
+Click on the Red Hat OpenShift Dev Spaces icon, then on `Log in with OpenShift` and log on again when prompted as `{user}`,` it will take us to the Red Hat OpenShift Dev Spaces dashboard, where we will create a Quarkus workspace, but first we need to authorize the operator to access our user account by clicking on `Allow selected permissions`.
 
 image::authorize.png[Authorize,,]
 
@@ -117,7 +117,7 @@ And run the git clone command:
 [start=3]
 . Navigate to the folder with the rest-villains code by typing in:
 
- ]$ cd rest-villains
+ ]$ cd quarkus-super-heroes/rest-villains
  
 . Run:
 
