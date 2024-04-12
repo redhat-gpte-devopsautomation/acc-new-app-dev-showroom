@@ -67,54 +67,54 @@ Improve and expedite the inner loop development process with live coding where c
 
 .*Let’s run a quick example of how live coding makes the development process faster and more pleasant.*
 
+We are going to use OpenShift Dev Spaces to work with the application code.
+
 [start=1]
-. First we will need to install the DevSpaces operator in OpenShift and for that we will log on as the `admin` user with the credentials received with the lab. Once done, go to [Home] -> [Operators] -> [Operator Hub] and type `dev spaces` in the Search field.
-
-image::operator-hub.png[OperatorHub,,]
-
-Choose the operator below and click `Install` without modifying any of the default options.
-
-image::dev-spaces-operator.png[DevSpacesOperator,,]
+. Open your instance of Dev Spaces `{devspaces_url}`
 
 [start=2]
-. After the installation is completed, log off the `admin` user and log back on as `{user}`. Go to [Home] -> [Operators] -> [Installed Operators] click on the `Red Hat OpenShift Dev Spaces` operator, then on `Red Hat OpenShift Dev Spaces instance Specification` and on `CreateCheCluster`.
+Click on `Log in with OpenShift` 
 
-image::che-cluster.png[CheCluster,,]
+image::login-openshift.png[Login,,]
 
 [start=3]
-. A few minutes after the cluster is created we will see the link to Red Hat OpenShift Dev Spaces on the list of Red Hat Applications on the top right corner of the OpenShift Console. Log off the `admin` user and log on again as `{user}`.
-
-image::applications.png[Applications,,]
-
-Click on the Red Hat OpenShift Dev Spaces icon, then on `Log in with OpenShift` and log on again when prompted as `{user}`,` it will take us to the Red Hat OpenShift Dev Spaces dashboard, where we will create a Quarkus workspace, but first we need to authorize the operator to access our user account by clicking on `Allow selected permissions`.
+Log on again to OpenSift when prompted as `{user}`, it will take us to the Red Hat OpenShift Dev Spaces dashboard, where we will create a our workspace, but first we need to authorize the operator to access our user account by clicking on `Allow selected permissions`.
 
 image::authorize.png[Authorize,,]
 
 [start=4]
-. Choose the Quarkus REST API workspace.
+. We will create the workspace from the code that is in our Gitea repo. Copy this URL `{gitea_console_url}`/`{user}`/quarkus-super-heroes/raw/branch/rhbq-3.2/devfile.yaml paste it in the `Git Repo URL` field and click `Create & Open`
 
-image::quarkus-dev-space.png[QuarkusDevSpace,,]
+image::create-workspace.png[Workspace,,]
 
 A list of tasks and its progress will be displayed.
 
 image::start-workspace.png[StartWorkspace,,]
 
-When the process is finished the Quarkus workspace will open in an IDE. Click on `Yes, I trust the authors`
+When the process is finished the Quarkus workspace will open in an IDE. Click on `Clone repository`
+
+image::clone-repository.png[CloneRepository,,]
+
+And paste the Gitea repository URL with the code for the Super Heroes application `{gitea_console_url}`/`{user}`/quarkus-super-heroes.git
+
+image::repo-url.png[RepoUrl,,]
+
+Choose the default destination folder to clone the rep
+
+image::destination-folder.png[DestinationFolder,,]
+
+And click `Add to Workspace` when prompted as well as on `Yes, I trust the authors`
+
+image::add-workspace.png[AddWorkspace,,]
 
 image::trust.png[Trust,,]
 
 [start=5]
-. Now we need to clone our Gitea repository to be able to work with it in our Quarkus workspace. Open a new terminal by going to [Terminal] → [New Terminal] on the menu bar present on the top left menu .
+. Now we are going to build and deploy the application. Open a new terminal by going to [Terminal] → [New Terminal] on the menu bar present on the top left menu.
 
 image::open-terminal.png[OpenTerminal,,]
 
-And run the git clone command:
-[subs="+attributes"]
-----
- ]$ git clone {gitea_console_url}/{gitea_user}/quarkus-super-heroes
-----
-
-[start=3]
+[start=6]
 . Navigate to the folder with the rest-villains code by typing in:
 
  ]$ cd quarkus-super-heroes/rest-villains
@@ -125,7 +125,11 @@ And run the git clone command:
  
 image::1-2-3-Quarkus-Dev.png[QDev,,]
 
-[start=5]
+Type `y` when prompted if you want to contribute with anonymous build data to Quarkus community.
+
+image::contribute.png[Contribute,,]
+
+[start=7]
 . Once this completes, a pop-up will appear to redirect the port of the application. Click `yes`.
 
 image::redirect.png[Redirect,,]
@@ -138,24 +142,25 @@ And confirm.
 
 image::confirm.png[Confirm,,]
 
+[start=8]
 Add `/api/villains/hello` at the end of the URL of the application.
 
 > **Note**: Take note of the response “Hello Villain Resource”
 
 
-[start=7]
+[start=9]
 . In your workspace on the left hand side of the window, open the rest-villains folder, and branch down through the following sequence
  rest-villains/src/main/java/io/quarkus/sample/superheroes/villain/rest/VillainResource.java
 
 image::villain-resource.png[VillainResource,,]
 
-[start=8]
+[start=10]
 . Down in line 257, replace the implementation of the hello() endpoint to:
  return "Hello Summit 2024!";
 
 image::hello-summit.png[HelloWorld,,]
 
-[start=9]
+[start=11]
 . Flip back to the browser and refresh the page to see your result changes.
 
 That’s it! We just experienced the ability to build or change an application with no need to compile. This enables developers to swiftly deliver an application wherever they need it.
@@ -195,7 +200,7 @@ image::1-3-1-CopyLoginToken.png[CopyToken,,]
 [start=2]
 . Navigate to the rest-fights code folder:
 
- ]$ cd /projects/quarkus-quickstarts/quarkus-super-heroes/rest-fights/
+ ]$ cd /home/user/quarkus-super-heroes/rest-fights/
 
 . Run:
 
