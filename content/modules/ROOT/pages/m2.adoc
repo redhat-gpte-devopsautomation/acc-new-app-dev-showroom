@@ -17,7 +17,7 @@ Today, modern environments are more complex than ever. Applications are being de
 OpenShift Pipelines is Kubernetes-native, meaning all of its building blocks are targeted to manage, build, deploy, and configure resources on the platform. It even includes catalogs of reusable components for building out the pipeline. This allows the DevOps team to standardize on the automation of a CI/CD lifecycle. Furthermore, the developer team can focus on delivering code to the repository and once the automation kicks off, it takes care of the rest!
 
 
-. To begin, go to the Code Server and open the rest-fights folder. (If you don’t have it open, https://codeserver-codeserver-%USERID%.%SUBDOMAIN%[click here,window=_blank].)
+. To begin, go to Dev Spaces and open the rest-fights folder. (If you don’t have it open, {devspaces_url}[click here,window=_blank].)
 
  rest-fights/src/main/java/io/quarkus/sample/superheroes/fight/rest/FightResource.java
 
@@ -33,22 +33,29 @@ image::2-1-1-FightResource.png[FightResource,,]
 image::2-1-2-ChangeOutput.png[HelloUser,,]
 
 [start=3]
-. If you don’t already have one active, open a new terminal by going to [Terminal] → [New Terminal] on the top menu bar.
-. Return to the *quarkus-superheroes-`{user}`* project, and make sure you’re in the  rest-fights directory
+. The menu bar on the lef hand side of the screen will show that there are pending changes, click on the icon and then on the `+` sign to stage the changes
 
- ]$ oc project quarkus-superheroes-%USERID%
- ]$ cd /home/codeserver/quarkus-super-heroes/rest-fights
+image::stage.png[Stage,,]
 
-[start=5]
-. Push the change into Git.
+Then write a messgae for the commit and click `Commit`
 
- ]$ git add src/main/java/io/quarkus/sample/superheroes/fight/rest/FightResource.java
- ]$ git commit -m "Code change to service"
- ]$ git push
+image::commit.png[Commit,,]
 
-> **Note**: If encountering “error: pathspec ‘change’...” or similar, try typing the git commit command explicitly as copy/paste might be changing the quote character to something unrecognizable, causing this error.
+And finally click `Sync Changes`
+
+image::sync.png[Sync,,]
+
+A pop-up will appear to enter the Gitea user and password (`{gitea_user}`/`{gitea_password}`)
+
+image::gitea-user.png[GiteaUser,,]
+
+image::gitea-password.png[GiteaPassword,,]
 
 image::2-1-4-GitPush.png[GitPush,,]
+
+Click `OK` on the confirm pop-up
+
+image::confirm-push.png[ConfirmPush,,]
 
 [start=6]
 . This will trigger the pipeline to start. Return back to the OpenShift console and switch to the Project *tekton-`{user}`*. Then navigate to [Pipelines] → [quarkus-pipeline] to see the pipeline starts the build process
@@ -66,7 +73,7 @@ image::2-1-6-PipelineRunsLog.png[PipelineRuns]
 > **Note**: it can take a few minutes for the pipeline run to finish and another minute or two for ArgoCD to deploy the new app version.
 
 [start=8]
-. Verify your changes have been deployed by http://rest-fights-quarkus-superheroes-%USERID%.%SUBDOMAIN%/q/swagger-ui/#/hello/get_api_fights_hello[calling the hello endpoint with the Swagger UI,window=_blank]:
+. Verify your changes have been deployed by http://rest-fights-quarkus-superheroes-{user}.{openshift_cluster_ingress_domain}/q/swagger-ui/#/hello/get_api_fights_hello[calling the hello endpoint with the Swagger UI,window=_blank]:
 
 > **Note**: if unable to access the application immediately upon pipeline completion, this may take an additional minute - try refreshing the page after another minute or two.
 
@@ -82,7 +89,7 @@ image::2-1-8a4-Verify-Response.png[Response,,]
 [start=3]
 .. An alternative is to call the endpoint directly from your terminal:
 
- ]$ curl http://rest-fights-quarkus-superheroes-%USERID%.%SUBDOMAIN%/api/fights/hello
+ ]$ curl http://rest-fights-quarkus-superheroes-`{user}`.`{openshift_cluster_ingress_domain}`/api/fights/hello
 
 
 Here we ran through an example of a pipeline. You can note that once the developer checks-in the code, the pipeline kicks off and starts the building process, and you can then view the progress of the pipeline.
@@ -118,9 +125,9 @@ image::2-3-1a-ArgoCDServer.png[ArgoCD,,]
 
 [start=2]
 
-.. https://argocd-server-argocd-%USERID%.%SUBDOMAIN%[Click here,window=_blank] for direct access to your ArgoCD instance.
+.. https://argocd-server-argocd-{user}.{openshift_cluster_ingress_domain}[Click here,window=_blank] for direct access to your ArgoCD instance.
 
-.. When the ArgoCD login screen comes up, click [Log In Via OpenShift] button at the top, and use the same UserID and password that you logged into OpenShift earlier (%USERID% / %PASSWORD%).
+.. When the ArgoCD login screen comes up, click [Log In Via OpenShift] button at the top, and use the same UserID and password that you logged into OpenShift earlier (`{user}`/`{password}`).
 
 > **Note**: You may need to authorize read-only access to your user information. Click Allow Permissions if so.
 
@@ -133,9 +140,9 @@ image::2-3-1c-Resources.png[ArgoCDResources,,]
 
 [start=2]
 . Go to Gitea and review the deployment configs:
-.. Gitea is available https://gitea.%SUBDOMAIN%[in this link,window=_blank].
+.. Gitea is available https://gitea.{openshift_cluster_ingress_domain}[in this link,window=_blank].
 .. Once on the Gitea homepage, click Sign In on the top right.
-.. Credentials are the same as you’ve been using (%USERID% / %PASSWORD%).
+.. Credentials are the same as you’ve been using (`{user}`/`{password}`).
 .. Click the link to the repository  *`{user}`/quarkus-super-heroes-deploy*.
 
 image::2-3-2d-GiteaRepo.png[GiteaRepo,,]

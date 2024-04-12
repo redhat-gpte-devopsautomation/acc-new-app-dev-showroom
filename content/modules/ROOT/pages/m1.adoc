@@ -34,7 +34,7 @@ image::1-1-1-QuarkusTopology.png[Topology,,]
 image::1-1-1-AppUI-URL.png[AppUI,,]
 
 [start=5]
-.. Alternatively, http://ui-super-heroes-quarkus-superheroes-`{user}.{openshift_cluster_ingress_domain}`[click here,window=_blank] for direct access.
+.. Alternatively, http://ui-super-heroes-quarkus-superheroes-{user}.{openshift_cluster_ingress_domain}[click here,window=_blank] for direct access.
 
 [start=2]
 . Run your first Fight
@@ -67,21 +67,57 @@ Improve and expedite the inner loop development process with live coding where c
 
 .*Let’s run a quick example of how live coding makes the development process faster and more pleasant.*
 
+We are going to use OpenShift Dev Spaces to work with the application code.
+
 [start=1]
-. To begin, https://codeserver-codeserver-`{user}`.`{openshift_cluster_ingress_domain}`[navigate to your code server,window=_blank], the password is `{password}`
+. Open your instance of Dev Spaces `{devspaces_url}`
 
 [start=2]
-. Open a new terminal by going to [Terminal] → [New Terminal] on the menu bar present either on the top left menu or at the top of the window.
+Click on `Log in with OpenShift` 
 
-> **Note**: If you don't have a taskbar at the top of your codeserver, you can still access a new terminal by using the [ctrl + `] shortcut, or you can try accessing your codeserver from a different browser as there may be incompatibility with the browser you're currently using.
-
-image::1-2-2-Terminal.png[Terminal,,]
-
+image::login-openshift.png[Login,,]
 
 [start=3]
-. Navigate to /home/lab-user/quarkus-super-heroes/rest-villains by typing in:
+Log on again to OpenSift when prompted as `{user}`, it will take us to the Red Hat OpenShift Dev Spaces dashboard, where we will create a our workspace, but first we need to authorize the operator to access our user account by clicking on `Allow selected permissions`.
 
- ]$ cd rest-villains
+image::authorize.png[Authorize,,]
+
+[start=4]
+. We will create the workspace from the code that is in our Gitea repo. Copy this URL `{gitea_console_url}`/`{user}`/quarkus-super-heroes/raw/branch/rhbq-3.2/devfile.yaml paste it in the `Git Repo URL` field and click `Create & Open`
+
+image::create-workspace.png[Workspace,,]
+
+A list of tasks and its progress will be displayed.
+
+image::start-workspace.png[StartWorkspace,,]
+
+When the process is finished the Quarkus workspace will open in an IDE. Click on `Clone repository`
+
+image::clone-repository.png[CloneRepository,,]
+
+And paste the Gitea repository URL with the code for the Super Heroes application `{gitea_console_url}`/`{user}`/quarkus-super-heroes.git
+
+image::repo-url.png[RepoUrl,,]
+
+Choose the default destination folder to clone the rep
+
+image::destination-folder.png[DestinationFolder,,]
+
+And click `Add to Workspace` when prompted as well as on `Yes, I trust the authors`
+
+image::add-workspace.png[AddWorkspace,,]
+
+image::trust.png[Trust,,]
+
+[start=5]
+. Now we are going to build and deploy the application. Open a new terminal by going to [Terminal] → [New Terminal] on the menu bar present on the top left menu.
+
+image::open-terminal.png[OpenTerminal,,]
+
+[start=6]
+. Navigate to the folder with the rest-villains code by typing in:
+
+ ]$ cd quarkus-super-heroes/rest-villains
  
 . Run:
 
@@ -89,26 +125,42 @@ image::1-2-2-Terminal.png[Terminal,,]
  
 image::1-2-3-Quarkus-Dev.png[QDev,,]
 
-[start=5]
-. Once this completes, https://codeserver-codeserver-`{user}`.`{openshift_cluster_ingress_domain}`/proxy/8084/api/villains/hello[access  your hello endpoint here,window=_blank].
+Type `y` when prompted if you want to contribute with anonymous build data to Quarkus community.
+
+image::contribute.png[Contribute,,]
+
+[start=7]
+. Once this completes, a pop-up will appear to redirect the port of the application. Click `yes`.
+
+image::redirect.png[Redirect,,]
+
+Another pop-up will ask if you want to open the URL to the application. Click on `Open In New Tab`.
+
+image::new-tab.png[NewTab,,]
+
+And confirm.
+
+image::confirm.png[Confirm,,]
+
+[start=8]
+Add `/api/villains/hello` at the end of the URL of the application.
 
 > **Note**: Take note of the response “Hello Villain Resource”
 
-image::1-2-5-Browser-Preview.png[BrowserPreview,,]
 
-[start=7]
+[start=9]
 . In your workspace on the left hand side of the window, open the rest-villains folder, and branch down through the following sequence
  rest-villains/src/main/java/io/quarkus/sample/superheroes/villain/rest/VillainResource.java
 
-image::1-2-7-VillainResource.png[VillainResource,,]
+image::villain-resource.png[VillainResource,,]
 
-[start=8]
+[start=10]
 . Down in line 257, replace the implementation of the hello() endpoint to:
  return "Hello Summit 2024!";
 
-image::1-2-8-HelloSummit.png[HelloWorld,,]
+image::hello-summit.png[HelloWorld,,]
 
-[start=9]
+[start=11]
 . Flip back to the browser and refresh the page to see your result changes.
 
 That’s it! We just experienced the ability to build or change an application with no need to compile. This enables developers to swiftly deliver an application wherever they need it.
@@ -128,21 +180,27 @@ image::1-3-1-CopyLogin.png[CopyLogin,,]
 image::1-3-1-CopyLoginToken.png[CopyToken,,]
 
 [start=3]
-.. Open a New Terminal in your codeserver, and paste the oc login command you just copied.
+.. Open a New Terminal in your Dev Spaces worksapce, and paste the oc login command you just copied.
 
 .. Alternatively, login directly with you username and password:
 
- ]$ oc login %APIURL% -u %USERID% -p %PASSWORD%
+[subs="+attributes"]
+----
+ ]$ {login_command}
+----
 
 [start=4]
 .. Type the following to create your new project:
 
- ]$ oc new-project dev-%USERID%
+[subs="+attributes"]
+----
+ ]$ oc new-project dev-{user}
+----
 
 [start=2]
-. Navigate to /home/codeserver/quarkus-super-heroes/rest-fights:
+. Navigate to the rest-fights code folder:
 
- ]$ cd /home/codeserver/quarkus-super-heroes/rest-fights/
+ ]$ cd /home/user/quarkus-super-heroes/rest-fights/
 
 . Run:
 
