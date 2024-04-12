@@ -33,39 +33,17 @@ image::2-1-1-FightResource.png[FightResource,,]
 image::2-1-2-ChangeOutput.png[HelloUser,,]
 
 [start=3]
-. If you don’t already have one active, open a new terminal by going to [Terminal] → [New Terminal] on the top menu bar.
-. Return to the *quarkus-superheroes-`{user}`* project, and make sure you’re in the  rest-fights directory
+. The menu bar on the lef hand side of the screen will show that there are pending changes, click on the icon and then on the `+` sign to stage the changes
 
-[subs="+attributes"]
-----
- ]$ oc project quarkus-superheroes-{user}
+image::stage.png[Stage,,]
 
- ]$ cd /projects/quarkus-quickstarts/quarkus-super-heroes/rest-fights
-----
+Then write a messgae for the commit and click `Commit`
 
-[start=5]
-. Push the change into Git. Firstly we need to configure our user for Git.
+image::commit.png[Commit,,]
 
-[subs="+attributes"]
-----
-]$ git config --global user.name "{gitea_user}"
+And finally click `Sync Changes`
 
-]$ git config --global user.email "{gitea_user}@example.com"
-----
-
-
-
-
-
-
- ]$ git add src/main/java/io/quarkus/sample/superheroes/fight/rest/FightResource.java
- ]$ git commit -m "Code change to service"
- ]$ git push
-
-
-
-
-
+image::sync.png[Sync,,]
 
 A pop-up will appear to enter the Gitea user and password (`{gitea_user}`/`{gitea_password}`)
 
@@ -74,6 +52,10 @@ image::gitea-user.png[GiteaUser,,]
 image::gitea-password.png[GiteaPassword,,]
 
 image::2-1-4-GitPush.png[GitPush,,]
+
+Click `OK` on the confirm pop-up
+
+image::confirm-push.png[ConfirmPush,,]
 
 [start=6]
 . This will trigger the pipeline to start. Return back to the OpenShift console and switch to the Project *tekton-`{user}`*. Then navigate to [Pipelines] → [quarkus-pipeline] to see the pipeline starts the build process
