@@ -20,7 +20,7 @@ asciidoc:
     gitea_console_url: https://gitea.apps.cluster-c75tv.sandbox906.opentlc.com
     gitea_password: openshift
     gitea_user: user6
-    login_command: oc login --insecure-skip-tls-verify=false -u user6 -p openshift https://api.cluster-c75tv.sandbox906.opentlc.com:6443
+    login_command: oc login -u user6 -p openshift https://api.cluster-c75tv.sandbox906.opentlc.com:6443
     openshift_cluster_ingress_domain: apps.cluster-c75tv.sandbox906.opentlc.com
     openshift_console_url: https://console-openshift-console.apps.cluster-c75tv.sandbox906.opentlc.com
     password: openshift

@@ -209,8 +209,7 @@ image::1-3-1-CopyLoginToken.png[CopyToken,,]
   -Dquarkus.kubernetes.deployment-target=openshift \
   -Dquarkus.container-image.builder=openshift \
   -Dquarkus.openshift.resources.limits.memory=2Gi \
-  -Dquarkus.openshift.resources.requests.memory=256Mi \
-  -Dquarkus.kubernetes-client.trust-certs=true
+  -Dquarkus.openshift.resources.requests.memory=256Mi
 
 > **Note**: This will take a few minutes while it deploys a fresh kafka instance back to the namespace, even though the Strimzi instance is still there. The rest-fights app will now be configured to use the new single-pod instance.
 
