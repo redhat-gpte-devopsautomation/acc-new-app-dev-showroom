@@ -10,19 +10,17 @@ asciidoc:
     release-version: master
     page-pagination: true
     my_var: foo
-    guid: c75tv
+    guid: xxxxx
     ssh_user: devops
     ssh_password: devops
     ssh_command: ssh devops@bastion.{guid}.example.opentlc.com
-    codeserver_password: openshift
-    codeserver_url: https://codeserver-codeserver-user6.apps.cluster-c75tv.sandbox906.opentlc.com
-    console_url: https://console-openshift-console.apps.cluster-c75tv.sandbox906.opentlc.com
-    gitea_console_url: https://gitea.apps.cluster-c75tv.sandbox906.opentlc.com
+    console_url: https://console-openshift-console.xxx.opentlc.com
+    gitea_console_url: https://gitea.apps.xxx.opentlc.com
     gitea_password: openshift
-    gitea_user: user6
-    login_command: oc login -u user6 -p openshift https://api.cluster-c75tv.sandbox906.opentlc.com:6443
-    openshift_cluster_ingress_domain: apps.cluster-c75tv.sandbox906.opentlc.com
-    openshift_console_url: https://console-openshift-console.apps.cluster-c75tv.sandbox906.opentlc.com
+    gitea_user: userx
+    login_command: oc login -u userx -p openshift https://api.xxx.opentlc.com:6443
+    openshift_cluster_ingress_domain: apps.xxx.opentlc.com
+    openshift_console_url: https://console-openshift-console.apps.xxx.opentlc.com
     password: openshift
-    user: user6
-    devspaces_url: https://user6-quarkus-quickstart-code-redirect-3.apps.cluster-ghrn8.sandbox544.opentlc.com
+    user: userx
+    devspaces_url: https://devspaces.apps.xxx.opentlc.com
