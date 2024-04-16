@@ -11,9 +11,6 @@ asciidoc:
     page-pagination: true
     my_var: foo
     guid: xxxxx
-    ssh_user: devops
-    ssh_password: devops
-    ssh_command: ssh devops@bastion.{guid}.example.opentlc.com
     console_url: https://console-openshift-console.xxx.opentlc.com
     gitea_console_url: https://gitea.apps.xxx.opentlc.com
     gitea_password: openshift
