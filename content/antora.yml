@@ -20,4 +20,3 @@ asciidoc:
     openshift_console_url: https://console-openshift-console.apps.xxx.opentlc.com
     password: openshift
     user: userx
-    devspaces_url: https://devspaces.apps.xxx.opentlc.com
