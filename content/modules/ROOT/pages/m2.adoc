@@ -89,7 +89,7 @@ image::2-1-8a4-Verify-Response.png[Response,,]
 [start=3]
 .. An alternative is to call the endpoint directly from your terminal:
 
- ]$ curl http://rest-fights-quarkus-superheroes-`{openshift_cluster_user_name}`.`{_ocp4_workload_acc_new_app_dev_wildcard_domain}`/api/fights/hello
+ ]$ curl http://rest-fights-quarkus-superheroes-{openshift_cluster_user_name}.{_ocp4_workload_acc_new_app_dev_wildcard_domain}/api/fights/hello
 
 
 Here we ran through an example of a pipeline. You can note that once the developer checks-in the code, the pipeline kicks off and starts the building process, and you can then view the progress of the pipeline.
@@ -104,7 +104,7 @@ The benefit of running everything in the single platform is that you can now reu
 
 > **Note**: This section is shortened since admin rights are restricted in this lab instance. When administrating your own environment, you’ll have access to more dashboards featuring much more in-depth monitoring details.
 
-. In the OpenShift console and select the Project quarkus-superheroes-%USERID%
+. In the OpenShift console and select the Project quarkus-superheroes-{openshift_cluster_user_name}
 . Take some time to review the details available to you in the Dashboard data
 .. Select  [Observe] → [Dashboard]
 
