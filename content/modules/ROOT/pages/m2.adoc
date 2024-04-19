@@ -45,7 +45,7 @@ And finally click `Sync Changes`
 
 image::sync.png[Sync,,]
 
-A pop-up will appear to enter the Gitea user and password (`{gitea_user}`/`{gitea_password}`)
+A pop-up will appear to enter the Gitea user and password (`{openshift_cluster_user_name}`/`{gitea_password}`)
 
 image::gitea-user.png[GiteaUser,,]
 
@@ -58,7 +58,7 @@ Click `OK` on the confirm pop-up
 image::confirm-push.png[ConfirmPush,,]
 
 [start=6]
-. This will trigger the pipeline to start. Return back to the OpenShift console and switch to the Project *tekton-`{user}`*. Then navigate to [Pipelines] → [quarkus-pipeline] to see the pipeline starts the build process
+. This will trigger the pipeline to start. Return back to the OpenShift console and switch to the Project *tekton-`{openshift_cluster_user_name}`*. Then navigate to [Pipelines] → [quarkus-pipeline] to see the pipeline starts the build process
 
 image::2-1-6a-TektonPipelines.png[Pipeline,,]
 
@@ -73,7 +73,7 @@ image::2-1-6-PipelineRunsLog.png[PipelineRuns]
 > **Note**: it can take a few minutes for the pipeline run to finish and another minute or two for ArgoCD to deploy the new app version.
 
 [start=8]
-. Verify your changes have been deployed by http://rest-fights-quarkus-superheroes-{user}.{openshift_cluster_ingress_domain}/q/swagger-ui/#/hello/get_api_fights_hello[calling the hello endpoint with the Swagger UI,window=_blank]:
+. Verify your changes have been deployed by http://rest-fights-quarkus-superheroes-{openshift_cluster_user_name}.{_ocp4_workload_acc_new_app_dev_wildcard_domain}/q/swagger-ui/#/hello/get_api_fights_hello[calling the hello endpoint with the Swagger UI,window=_blank]:
 
 > **Note**: if unable to access the application immediately upon pipeline completion, this may take an additional minute - try refreshing the page after another minute or two.
 
@@ -89,7 +89,7 @@ image::2-1-8a4-Verify-Response.png[Response,,]
 [start=3]
 .. An alternative is to call the endpoint directly from your terminal:
 
- ]$ curl http://rest-fights-quarkus-superheroes-`{user}`.`{openshift_cluster_ingress_domain}`/api/fights/hello
+ ]$ curl http://rest-fights-quarkus-superheroes-`{openshift_cluster_user_name}`.`{_ocp4_workload_acc_new_app_dev_wildcard_domain}`/api/fights/hello
 
 
 Here we ran through an example of a pipeline. You can note that once the developer checks-in the code, the pipeline kicks off and starts the building process, and you can then view the progress of the pipeline.
@@ -119,15 +119,15 @@ As we start to manage more complex environments that may span across multiple cl
 
 
 . Go to GitOps console [ArgoCD], review all of the monitored resources, and map it back to the Topology in the OpenShift console:
-.. Navigate to the Project *argocd-`{user}`* and flip to the Topology view. Select the OpenURL link in the top right-hand corner of the argocd-server icon.
+.. Navigate to the Project *argocd-`{openshift_cluster_user_name}`* and flip to the Topology view. Select the OpenURL link in the top right-hand corner of the argocd-server icon.
 
 image::2-3-1a-ArgoCDServer.png[ArgoCD,,]
 
 [start=2]
 
-.. https://argocd-server-argocd-{user}.{openshift_cluster_ingress_domain}[Click here,window=_blank] for direct access to your ArgoCD instance.
+.. https://argocd-server-argocd-{openshift_cluster_user_name}.{_ocp4_workload_acc_new_app_dev_wildcard_domain}[Click here,window=_blank] for direct access to your ArgoCD instance.
 
-.. When the ArgoCD login screen comes up, click [Log In Via OpenShift] button at the top, and use the same UserID and password that you logged into OpenShift earlier (`{user}`/`{password}`).
+.. When the ArgoCD login screen comes up, click [Log In Via OpenShift] button at the top, and use the same UserID and password that you logged into OpenShift earlier (`{openshift_cluster_user_name}`/`{gitea_password}`).
 
 > **Note**: You may need to authorize read-only access to your user information. Click Allow Permissions if so.
 
@@ -140,10 +140,10 @@ image::2-3-1c-Resources.png[ArgoCDResources,,]
 
 [start=2]
 . Go to Gitea and review the deployment configs:
-.. Gitea is available https://gitea.{openshift_cluster_ingress_domain}[in this link,window=_blank].
+.. Gitea is available {gitea_console_url}[in this link,window=_blank].
 .. Once on the Gitea homepage, click Sign In on the top right.
-.. Credentials are the same as you’ve been using (`{user}`/`{password}`).
-.. Click the link to the repository  *`{user}`/quarkus-super-heroes-deploy*.
+.. Credentials are the same as you’ve been using (`{openshift_cluster_user_name}`/`{gitea_password}`).
+.. Click the link to the repository  *`{openshift_cluster_user_name}`/quarkus-super-heroes-deploy*.
 
 image::2-3-2d-GiteaRepo.png[GiteaRepo,,]
 
@@ -158,7 +158,7 @@ image::2-3-2e-GiteaKustomize.png[Kustomize,,]
 image::2-3-2f-GiteaDeployment.png[GiteaDeployment,,]
 
 [start=3]
-. Back In the OpenShift Console, under Developer perspective, go to the Topology, within the Project *quarkus-superheroes-`{user}`*.
+. Back In the OpenShift Console, under Developer perspective, go to the Topology, within the Project *quarkus-superheroes-`{openshift_cluster_user_name}`*.
 . Locate the rest-fights service.
 . Click the icon and the right panel will appear - select the Details tab.
 . Increase the number of running Pod to 3 by clicking ^ next to the pod count chart

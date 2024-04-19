@@ -16,7 +16,7 @@ Being flexible in what programming language to use allows the developer to use t
 
 .*Run the application for the first time:*
 . Navigate to the Application UI
-.. Log in to your OpenShift Console with username `{user}` and password `{password}`.
+.. Log in to your OpenShift Console with username `{openshift_cluster_user_name}` and password `{gitea_password}`.
 .. Ensure you select #Developer# from the dropdown.
 
 > **Note**: For the purpose of this lab, with multiple users accessing the same environment simultaneously, admin access is limited. When you deploy this solution on your own, you will likely have access to more Administrative rights than provided in this lab.
@@ -24,7 +24,7 @@ Being flexible in what programming language to use allows the developer to use t
 image::1-1-3-DeveloperPerspective.png[Dev,,]
 
 [start=3]
-.. Select #Topology# in the left hand menu and choose quarkus-superheroes-`{user}`
+.. Select #Topology# in the left hand menu and choose quarkus-superheroes-`{openshift_cluster_user_name}`
 
 image::1-1-1-QuarkusTopology.png[Topology,,]
 
@@ -34,7 +34,7 @@ image::1-1-1-QuarkusTopology.png[Topology,,]
 image::1-1-1-AppUI-URL.png[AppUI,,]
 
 [start=5]
-.. Alternatively, http://ui-super-heroes-quarkus-superheroes-{user}.{openshift_cluster_ingress_domain}[click here,window=_blank] for direct access.
+.. Alternatively, http://ui-super-heroes-quarkus-superheroes-{openshift_cluster_user_name}.{_ocp4_workload_acc_new_app_dev_wildcard_domain}[click here,window=_blank] for direct access.
 
 [start=2]
 . Run your first Fight
@@ -78,12 +78,12 @@ Click on `Log in with OpenShift`
 image::login-openshift.png[Login,,]
 
 [start=3]
-Log on again to OpenSift when prompted as `{user}`, it will take us to the Red Hat OpenShift Dev Spaces dashboard, where we will create a our workspace, but first we need to authorize the operator to access our user account by clicking on `Allow selected permissions`.
+Log on again to OpenSift when prompted as `{openshift_cluster_user_name}`, it will take us to the Red Hat OpenShift Dev Spaces dashboard, where we will create a our workspace, but first we need to authorize the operator to access our user account by clicking on `Allow selected permissions`.
 
 image::authorize.png[Authorize,,]
 
 [start=4]
-. We will create the workspace from the code that is in our Gitea repo. Copy this URL `{gitea_console_url}`/`{user}`/quarkus-super-heroes/raw/branch/rhbq-3.2/devfile.yaml paste it in the `Git Repo URL` field and click `Create & Open`
+. We will create the workspace from the code that is in our Gitea repo. Copy this URL `{gitea_console_url}`/`{openshift_cluster_user_name}`/quarkus-super-heroes/raw/branch/rhbq-3.2/devfile.yaml paste it in the `Git Repo URL` field and click `Create & Open`
 
 image::create-workspace.png[Workspace,,]
 
@@ -95,7 +95,7 @@ When the process is finished the Quarkus workspace will open in an IDE. Click on
 
 image::clone-repository.png[CloneRepository,,]
 
-And paste the Gitea repository URL with the code for the Super Heroes application `{gitea_console_url}`/`{user}`/quarkus-super-heroes.git
+And paste the Gitea repository URL with the code for the Super Heroes application `{gitea_console_url}`/`{openshift_cluster_user_name}`/quarkus-super-heroes.git
 
 image::repo-url.png[RepoUrl,,]
 
@@ -186,7 +186,7 @@ image::1-3-1-CopyLoginToken.png[CopyToken,,]
 
 [subs="+attributes"]
 ----
- ]$ oc login -u {user} - p {password} {openshift_api_server_url}
+ ]$ oc login -u {openshift_cluster_user_name} - p {openshift_cluster_user_password} {openshift_api_server_url}
 ----
 
 [start=4]
@@ -194,7 +194,7 @@ image::1-3-1-CopyLoginToken.png[CopyToken,,]
 
 [subs="+attributes"]
 ----
- ]$ oc new-project dev-{user}
+ ]$ oc new-project dev-{openshift_cluster_user_name}
 ----
 
 [start=2]
@@ -227,7 +227,7 @@ Developers can focus on code without having to touch containers, leaving all the
 Finally, we have the ability to self-provision services. This allows greater efficiency by enabling your developers to focus on the code rather than the logistics. Developers are now able to take full control over their infrastructure and application configuration, while being shielded from the underlying complexities of the cloud providers and services. As an example, if I need another database, I can simply provision another database using a template or operator. There is even a UI guiding you through the process, and the provisioning and configuration can be exported as code that can be reused later for DevOps.
 
 . Go to the OpenShift Console and make sure you're still in the Developer perspective.
-. In the newly added development project *dev-`{user}`*, Click +Add on the left menu
+. In the newly added development project *dev-`{openshift_cluster_user_name}`*, Click +Add on the left menu
 .. Select Database in the Developer Catalog
 
 image::1-4-2a-AddDatabase.png[AddDB,,]
