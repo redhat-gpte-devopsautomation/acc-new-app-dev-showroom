@@ -34,7 +34,7 @@ image::1-1-1-QuarkusTopology.png[Topology,,]
 image::1-1-1-AppUI-URL.png[AppUI,,]
 
 [start=5]
-.. Alternatively, http://ui-super-heroes-quarkus-superheroes-{openshift_cluster_user_name}.{_ocp4_workload_acc_new_app_dev_wildcard_domain}[click here,window=_blank] for direct access.
+.. Alternatively, {heroes_super_ui}[click here,window=_blank] for direct access.
 
 [start=2]
 . Run your first Fight

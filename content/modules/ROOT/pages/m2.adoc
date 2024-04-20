@@ -73,7 +73,7 @@ image::2-1-6-PipelineRunsLog.png[PipelineRuns]
 > **Note**: it can take a few minutes for the pipeline run to finish and another minute or two for ArgoCD to deploy the new app version.
 
 [start=8]
-. Verify your changes have been deployed by http://rest-fights-quarkus-superheroes-{openshift_cluster_user_name}.{_ocp4_workload_acc_new_app_dev_wildcard_domain}/q/swagger-ui/#/hello/get_api_fights_hello[calling the hello endpoint with the Swagger UI,window=_blank]:
+. Verify your changes have been deployed by {heroes_fights_swagger_ui}/#/hello/get_api_fights_hello[calling the hello endpoint with the Swagger UI,window=_blank]:
 
 > **Note**: if unable to access the application immediately upon pipeline completion, this may take an additional minute - try refreshing the page after another minute or two.
 
@@ -89,7 +89,7 @@ image::2-1-8a4-Verify-Response.png[Response,,]
 [start=3]
 .. An alternative is to call the endpoint directly from your terminal:
 
- ]$ curl http://rest-fights-quarkus-superheroes-{openshift_cluster_user_name}.{_ocp4_workload_acc_new_app_dev_wildcard_domain}/api/fights/hello
+ ]$ curl {heroes_fights_data_ui}/api/fights/hello
 
 
 Here we ran through an example of a pipeline. You can note that once the developer checks-in the code, the pipeline kicks off and starts the building process, and you can then view the progress of the pipeline.
@@ -125,7 +125,7 @@ image::2-3-1a-ArgoCDServer.png[ArgoCD,,]
 
 [start=2]
 
-.. https://argocd-server-argocd-{openshift_cluster_user_name}.{_ocp4_workload_acc_new_app_dev_wildcard_domain}[Click here,window=_blank] for direct access to your ArgoCD instance.
+.. {heroes_argocd}[Click here,window=_blank] for direct access to your ArgoCD instance.
 
 .. When the ArgoCD login screen comes up, click [Log In Via OpenShift] button at the top, and use the same UserID and password that you logged into OpenShift earlier (`{openshift_cluster_user_name}`/`{gitea_password}`).
 

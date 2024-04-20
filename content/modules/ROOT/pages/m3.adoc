@@ -48,7 +48,7 @@ In a distributed environment, fault tolerance happens around the clock for the m
 
 . Back in Topology, find the *rest-villains* icon and click on it.
 . The deployment sidebar will appear on the right-hand side of the topology view. Click the Details tab.
-. Click the v[down] arrow, next to the pod count chart, to scale the service down to 0 pods. This will simulate the service being unavailable.
+. Click the down arrow, next to the pod count chart, to scale the service down to 0 pods. This will simulate the service being unavailable.
 
 image::3-2-3-ScaleDown.png[ScaleDown,,]
 
@@ -103,7 +103,7 @@ Similar to API, EDA also needs to manage, secure, and provide access information
 
 . Service Registry is built on the Apicurio open source community project and is the tool we will be exploring in this section of the lab.
 
-. http://apicurio-quarkus-superheroes-{openshift_cluster_user_name}.{_ocp4_workload_acc_new_app_dev_wildcard_domain}[Navigate to the Apicurio,window=_blank] instance that is deployed for your user.
+. {heroes_apicurio}[Navigate to the Apicurio,window=_blank] instance that is deployed for your user.
 
 . Select Fight (fights-value) to see more details and display general information about the schema.
 
