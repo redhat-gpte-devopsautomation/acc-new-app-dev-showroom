@@ -18,3 +18,8 @@ asciidoc:
     login_command: oc login -u userx -p openshift https://api.xxx.opentlc.com:6443
     openshift_cluster_ingress_domain: apps.xxx.opentlc.com
     openshift_console_url: https://console-openshift-console.apps.xxx.opentlc.com
+    user: user1
+    password: openshift
+    openshift_api_server_url: https://api.cluster-g9bz5.sandbox1870.opentlc.com:6443
+    openshift_api_url: https://api.cluster-g9bz5.sandbox1870.opentlc.com:6443
+    devspaces_url: https://devspaces.apps.cluster-g9bz5.sandbox1870.opentlc.com

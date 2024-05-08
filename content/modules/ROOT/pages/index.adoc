@@ -15,8 +15,8 @@ We will be using Red Hat OpenShift as the development platform, as well as Gitea
 OpenShift console URL: 
 `{console_url}`
 Gitea console URL: `{gitea_console_url}`
-Gitea user: `{openshift_cluster_user_name}`
+Gitea user: `{user}`
 Gitea password: `{gitea_password}`
 OpenShift login command: 
-oc login -u `{openshift_cluster_user_name}` -p `{openshift_cluster_user_password}` `{openshift_api_url}`
+oc login -u `{user}` -p `{password}` `{openshift_api_url}`
 Dev Spaces URL: `{devspaces_url}`
