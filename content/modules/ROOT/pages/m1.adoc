@@ -16,7 +16,7 @@ Being flexible in what programming language to use allows the developer to use t
 
 .*Run the application for the first time:*
 . Navigate to the Application UI
-.. Log in to your {openshift_console_url}[OpenShift Console,window=_blank] with username `{user}` and password `{password}`.
+.. Log in to your link:{openshift_console_url}[OpenShift Console,window=_blank] with username `{user}` and password `{password}`.
 .. Ensure you select #Developer# from the dropdown.
 
 > **Note**: For the purpose of this lab, with multiple users accessing the same environment simultaneously, admin access is limited. When you deploy this solution on your own, you will likely have access to more Administrative rights than provided in this lab.
@@ -34,7 +34,7 @@ image::1-1-1-QuarkusTopology.png[Topology,,]
 image::1-1-1-AppUI-URL.png[AppUI,,]
 
 [start=5]
-.. Alternatively, {heroes_super_ui}[click here,window=_blank] for direct access.
+.. Alternatively, link:{heroes_super_ui}[click here,window=_blank] for direct access.
 
 [start=2]
 . Run your first Fight
@@ -70,7 +70,7 @@ Improve and expedite the inner loop development process with live coding where c
 We are going to use OpenShift Dev Spaces to work with the application code.
 
 [start=1]
-. Open your instance of Dev Spaces `{devspaces_url}`
+. Open your instance of link:{devspaces_url}[Dev Spaces here,window=_blank] and log in with your OpenShift credentials.
 
 [start=2]
 Click on `Log in with OpenShift` 
@@ -83,7 +83,7 @@ Log on again to OpenSift when prompted as `{user}`, it will take us to the Red H
 image::authorize.png[Authorize,,]
 
 [start=4]
-. We will create the workspace from the code that is in our Gitea repo. Copy this URL `{gitea_console_url}`/`{gitea_user}`/quarkus-super-heroes/raw/branch/rhbq-3.2/devfile.yaml paste it in the `Git Repo URL` field and click `Create & Open`
+. We will create the workspace from the code that is in our Gitea repo. Copy this URL `{gitea_console_url}/{gitea_user}/quarkus-super-heroes/raw/branch/rhbq-3.2/devfile.yaml` paste it in the `Git Repo URL` field and click `Create & Open`
 
 image::create-workspace.png[Workspace,,]
 

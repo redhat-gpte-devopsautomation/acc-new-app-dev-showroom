@@ -103,7 +103,7 @@ Similar to API, EDA also needs to manage, secure, and provide access information
 
 . Service Registry is built on the Apicurio open source community project and is the tool we will be exploring in this section of the lab.
 
-. {heroes_apicurio}[Navigate to the Apicurio,window=_blank] instance that is deployed for your user.
+. link:{heroes_apicurio}[Navigate to the Apicurio,window=_blank] instance that is deployed for your user.
 
 . Select Fight (fights-value) to see more details and display general information about the schema.
 

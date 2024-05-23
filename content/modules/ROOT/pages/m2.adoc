@@ -17,7 +17,7 @@ Today, modern environments are more complex than ever. Applications are being de
 OpenShift Pipelines is Kubernetes-native, meaning all of its building blocks are targeted to manage, build, deploy, and configure resources on the platform. It even includes catalogs of reusable components for building out the pipeline. This allows the DevOps team to standardize on the automation of a CI/CD lifecycle. Furthermore, the developer team can focus on delivering code to the repository and once the automation kicks off, it takes care of the rest!
 
 
-. To begin, go to Dev Spaces and open the rest-fights folder. (If you don’t have it open, {devspaces_url}[click here,window=_blank].)
+. To begin, go to Dev Spaces and open the rest-fights folder. (If you don’t have it open, link:{devspaces_url}[click here,window=_blank].)
 
  rest-fights/src/main/java/io/quarkus/sample/superheroes/fight/rest/FightResource.java
 
@@ -89,7 +89,7 @@ image::2-1-8a4-Verify-Response.png[Response,,]
 [start=3]
 .. An alternative is to call the endpoint directly from your terminal:
 
- ]$ curl {heroes_fights_data_ui}/api/fights/hello
+ ]$ curl `{heroes_fights_data_ui}/api/fights/hello`
 
 
 Here we ran through an example of a pipeline. You can note that once the developer checks-in the code, the pipeline kicks off and starts the building process, and you can then view the progress of the pipeline.
@@ -125,7 +125,7 @@ image::2-3-1a-ArgoCDServer.png[ArgoCD,,]
 
 [start=2]
 
-.. {heroes_argocd}[Click here,window=_blank] for direct access to your ArgoCD instance.
+.. link:{heroes_argocd}[Click here,window=_blank] for direct access to your ArgoCD instance.
 
 .. When the ArgoCD login screen comes up, click [Log In Via OpenShift] button at the top, and use the same UserID and password that you logged into OpenShift earlier (`{user}`/`{password}`).
 
@@ -140,7 +140,7 @@ image::2-3-1c-Resources.png[ArgoCDResources,,]
 
 [start=2]
 . Go to Gitea and review the deployment configs:
-.. Gitea is available {gitea_console_url}[in this link,window=_blank].
+.. Gitea is available link:{gitea_console_url}[in this link,window=_blank].
 .. Once on the Gitea homepage, click Sign In on the top right.
 .. Credentials are the same as you’ve been using (`{gitea_user}`/`{gitea_password}`).
 .. Click the link to the repository  *`{gitea_user}`/quarkus-super-heroes-deploy*.
