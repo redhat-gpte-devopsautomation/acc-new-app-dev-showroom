@@ -11,7 +11,7 @@ asciidoc:
     page-pagination: true
     guid: guid
     openshift_console_url: openshift_console_url
-    user: user1
+    user: user
     password: openshift
     openshift_cluster_ingress_domain: openshift_cluster_ingress_domain
     gitea_console_url: gitea_console_url
