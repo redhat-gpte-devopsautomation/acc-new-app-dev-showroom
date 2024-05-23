@@ -12,11 +12,17 @@ In this lab we'll address some ways that can help you with some major challenges
 We will be using Red Hat OpenShift as the development platform, as well as Gitea as the code repository and finally Red Hat OpenShift Dev Spaces as development environment.
 
 [%hardbreaks]
-OpenShift console URL: 
-`{console_url}`
-Gitea console URL: `{gitea_console_url}`
-Gitea user: `{user}`
-Gitea password: `{gitea_password}`
-OpenShift login command: 
-oc login -u `{user}` -p `{password}` `{openshift_api_url}`
-Dev Spaces URL: `{devspaces_url}`
+
+Openshift Console: `{openshift_console_url}`
+OpenShift User: `{user}`
+OpenShift Password: `{password}`
+Gitea URL: `{gitea_console_url}`
+Gitea User: `{gitea_user}`
+Gitea Password: `{gitea_password}`
+Heroes UI: `{heroes_super_ui}`
+Heroes Fights Swagger UI: `{heroes_fights_swagger_ui}`
+Heroes Fights Data UI: `{heroes_fights_data_ui}`
+Heroes ArgoCD: `{heroes_argocd}`
+Heroes Apicurio: `{heroes_apicurio}`
+DevSpaces: `{devspaces_url}`
+OpenShift API: `{openshift_api_url}`

@@ -45,7 +45,7 @@ And finally click `Sync Changes`
 
 image::sync.png[Sync,,]
 
-A pop-up will appear to enter the Gitea user and password (`{user}`/`{gitea_password}`)
+A pop-up will appear to enter the Gitea user and password (`{gitea_user}`/`{gitea_password}`)
 
 image::gitea-user.png[GiteaUser,,]
 
@@ -127,7 +127,7 @@ image::2-3-1a-ArgoCDServer.png[ArgoCD,,]
 
 .. {heroes_argocd}[Click here,window=_blank] for direct access to your ArgoCD instance.
 
-.. When the ArgoCD login screen comes up, click [Log In Via OpenShift] button at the top, and use the same UserID and password that you logged into OpenShift earlier (`{user}`/`{gitea_password}`).
+.. When the ArgoCD login screen comes up, click [Log In Via OpenShift] button at the top, and use the same UserID and password that you logged into OpenShift earlier (`{user}`/`{password}`).
 
 > **Note**: You may need to authorize read-only access to your user information. Click Allow Permissions if so.
 
@@ -142,8 +142,8 @@ image::2-3-1c-Resources.png[ArgoCDResources,,]
 . Go to Gitea and review the deployment configs:
 .. Gitea is available {gitea_console_url}[in this link,window=_blank].
 .. Once on the Gitea homepage, click Sign In on the top right.
-.. Credentials are the same as you’ve been using (`{user}`/`{gitea_password}`).
-.. Click the link to the repository  *`{user}`/quarkus-super-heroes-deploy*.
+.. Credentials are the same as you’ve been using (`{gitea_user}`/`{gitea_password}`).
+.. Click the link to the repository  *`{gitea_user}`/quarkus-super-heroes-deploy*.
 
 image::2-3-2d-GiteaRepo.png[GiteaRepo,,]
 
