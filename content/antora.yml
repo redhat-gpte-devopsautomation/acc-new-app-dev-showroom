@@ -12,7 +12,7 @@ asciidoc:
     guid: guid
     openshift_console_url: openshift_console_url
     user: user1
-    password": openshift
+    password: openshift
     openshift_cluster_ingress_domain: openshift_cluster_ingress_domain
     gitea_console_url: gitea_console_url
     gitea_user: gitea_user
