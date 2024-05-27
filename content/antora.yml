@@ -23,4 +23,4 @@ asciidoc:
     heroes_argocd: heroes_argocd
     heroes_apicurio: heroes_apicurio
     devspaces_url: devspaces_url
-    openshift_api_url: openshift_api_url
+    heroes_openshift_api_url: heroes_openshift_api_url

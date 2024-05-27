@@ -25,4 +25,4 @@ Heroes Fights Data UI: `{heroes_fights_data_ui}`
 Heroes ArgoCD: `{heroes_argocd}`
 Heroes Apicurio: `{heroes_apicurio}`
 DevSpaces: `{devspaces_url}`
-OpenShift API: `{openshift_api_url}`
+OpenShift API: `{heroes_openshift_api_url}`
