@@ -10,7 +10,7 @@ on:
 
 permissions:
   pages: write
-  id-token: write
+  # id-token: write
 
 concurrency:
   group: gh-pages
@@ -38,11 +38,11 @@ jobs:
           path: www
   deploy:
     needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    # environment:
+    #   name: github-pages
+    #   url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy to GitHub Pages
+    - name: deploy github pages
       id: deployment
       uses: actions/deploy-pages@v4
