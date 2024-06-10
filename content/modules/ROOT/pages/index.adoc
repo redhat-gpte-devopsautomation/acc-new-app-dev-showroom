@@ -14,8 +14,8 @@ We will be using Red Hat OpenShift as the development platform, as well as Gitea
 [%hardbreaks]
 
 Openshift Console: `{openshift_console_url}`
-OpenShift User: `{user}`
-OpenShift Password: `{password}`
+OpenShift User: `{openshift_cluster_user_name}`
+OpenShift Password: `{openshift_cluster_user_password}`
 Gitea URL: `{gitea_console_url}`
 Gitea User: `{gitea_user}`
 Gitea Password: `{gitea_password}`
