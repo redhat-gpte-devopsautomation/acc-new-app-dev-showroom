@@ -11,8 +11,6 @@ asciidoc:
     page-pagination: true
     guid: guid
     openshift_console_url: openshift_console_url
-    openshift_cluster_user_name: openshift_cluster_user_name
-    openshift_cluster_user_password: openshift_cluster_user_password
     openshift_cluster_ingress_domain: openshift_cluster_ingress_domain
     gitea_console_url: gitea_console_url
     gitea_user: gitea_user
@@ -24,3 +22,5 @@ asciidoc:
     heroes_apicurio: heroes_apicurio
     devspaces_url: devspaces_url
     heroes_openshift_api_url: heroes_openshift_api_url
+    heroes_user: heroes_user
+    heroes_password: heroes_password

@@ -19,7 +19,7 @@ Since modern application development has shifted to distributed, decoupled, and 
 Red Hat accelerates the delivery of these two most widely adopted types of architecture by providing solutions the system needs. First the base platform, shifting from large monolithic applications to microservices means removing the complexity of managing day two operation, application delivery, and resource orchestration. In the previous sections, we got to witness how Red Hat can automate in a cloud native way and have code from the application in just a few minutes. Furthermore, we’re even able to deliver them in the form of containers to easily distribute and manage.
 
 .*Here, we will demonstrate the use of both API as well as implementing Event Driven Architecture using Apache Kafka*
-. In the quarkus-superheroes-{openshift_cluster_user_name} project, select one of the rest-{“hero”, “villain”, “fight”} applications in the OpenShift Topology perspective and select the Resourcestab.
+. In the quarkus-superheroes-{heroes_user} project, select one of the rest-{“hero”, “villain”, “fight”} applications in the OpenShift Topology perspective and select the Resourcestab.
 
 image::3-1-1-ResourceURL.png[ResourceURL,,]
 
